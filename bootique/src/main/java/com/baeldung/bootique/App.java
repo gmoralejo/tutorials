@@ -12,6 +12,9 @@ import java.util.function.Supplier;
 
 public class App {
 
+    /**
+     * Bootique application. This is an example Bootique app with controllers.
+     */
     public static void main(String[] args) {
         Module module = binder -> JerseyModule.extend(binder).addResource(IndexController.class)
           .addResource(SaveController.class);

@@ -8,6 +8,10 @@ import io.grpc.ManagedChannel;
 import io.grpc.ManagedChannelBuilder;
 
 public class GrpcClient {
+
+    /**
+     * grpc client application.
+     */
     public static void main(String[] args) throws InterruptedException {
         ManagedChannel channel = ManagedChannelBuilder.forAddress("localhost", 8080)
             .usePlaintext()

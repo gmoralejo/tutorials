@@ -15,24 +15,36 @@ public class JerseyClient {
 
     private static final String URI_GREETINGS = "http://localhost:8080/jersey/greetings";
 
+    /**
+     * Make get request with jersey client
+     */
     public static String getHelloGreeting() {
         return createClient().target(URI_GREETINGS)
             .request()
             .get(String.class);
     }
 
+    /**
+     * Make get request with jersey client
+     */
     public static String getHiGreeting() {
         return createClient().target(URI_GREETINGS + "/hi")
             .request()
             .get(String.class);
     }
 
+    /**
+     * Make post request with jersey client
+     */
     public static Response getCustomGreeting() {
         return createClient().target(URI_GREETINGS + "/custom")
             .request()
             .post(Entity.text("custom"));
     }
 
+    /**
+     * Create jersey client
+     */
     private static Client createClient() {
         ClientConfig config = new ClientConfig();
         config.register(RequestClientFilter.class);

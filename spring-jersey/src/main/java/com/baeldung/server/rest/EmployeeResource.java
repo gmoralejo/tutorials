@@ -26,6 +26,9 @@ public class EmployeeResource {
     @Autowired
     private EmployeeRepository employeeRepository;
 
+    /**
+     * Jersey handler for get requests.
+     */
     @GET
     @Produces({ MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML })
     public List<Employee> getAllEmployees() {
@@ -39,6 +42,9 @@ public class EmployeeResource {
         return employeeRepository.getEmployee(id);
     }
 
+    /**
+     * Jersey handler for put or update requests.
+     */
     @PUT
     @Path("/{id}")
     @Consumes({ MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML })
@@ -55,6 +61,9 @@ public class EmployeeResource {
         return Response.status(Response.Status.OK.getStatusCode()).build();
     }
 
+    /**
+     * Jersey handler for post or create requests.
+     */
     @POST
     @Consumes({ MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML })
     public Response addEmployee(Employee employee, @Context UriInfo uriInfo) {

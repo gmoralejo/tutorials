@@ -30,16 +30,25 @@ public class CustomerController {
     @Autowired
     private OrderService orderService;
 
+    /**
+     * Spring rest handler for get requests.
+     */
     @GetMapping("/{customerId}")
     public Customer getCustomerById(@PathVariable final String customerId) {
         return customerService.getCustomerDetail(customerId);
     }
 
+    /**
+     * Handler for get requests.
+     */
     @GetMapping("/{customerId}/{orderId}")
     public Order getOrderById(@PathVariable final String customerId, @PathVariable final String orderId) {
         return orderService.getOrderByIdForCustomer(customerId, orderId);
     }
 
+    /**
+     * Spring rest handler for get requests with list result.
+     */
     @GetMapping(value = "/{customerId}/orders", produces = { "application/hal+json" })
     public Resources<Order> getOrdersForCustomer(@PathVariable final String customerId) {
         final List<Order> orders = orderService.getAllOrdersForCustomer(customerId);

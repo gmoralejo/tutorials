@@ -8,6 +8,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @EnableAutoConfiguration
 public class RestTemplateConfigurationApplication {
 
+    /**
+     * Spring boot application with rest template.
+     */
     public static void main(String[] args) {
         SpringApplication.run(RestTemplateConfigurationApplication.class, args);
     }

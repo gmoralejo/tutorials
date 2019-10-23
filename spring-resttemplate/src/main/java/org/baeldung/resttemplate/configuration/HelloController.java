@@ -16,11 +16,17 @@ public class HelloController {
     private static final String RESOURCE_URL = "http://localhost:8082/spring-rest/baz";
     private RestTemplate restTemplate;
 
+    /**
+     * Rest template builder for controller.
+     */
     @Autowired
     public HelloController(RestTemplateBuilder builder) {
         this.restTemplate = builder.build();
     }
 
+    /**
+     * Make request using rest template
+     */
     @RequestMapping("/foo")
     public String foo() {
 

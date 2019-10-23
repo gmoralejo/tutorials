@@ -35,6 +35,9 @@ public class PDF2TextExample {
 		}
 	}
 
+    /**
+     * Generate txt from pdf
+     */
 	private static void generateTxtFromPDF(String filename) throws IOException {
 		File f = new File(filename);
 		String parsedText;
@@ -58,6 +61,9 @@ public class PDF2TextExample {
 		pw.close();
 	}
 
+    /**
+     * Generate pdf from txt
+     */
 	private static void generatePDFFromTxt(String filename) throws IOException, DocumentException {
 		Document pdfDoc = new Document(PageSize.A4);
 		PdfWriter.getInstance(pdfDoc, new FileOutputStream("src/output/txt.pdf"))

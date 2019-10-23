@@ -20,6 +20,9 @@ public class RootController {
 
     // discover
 
+    /**
+     * Spring rest get handler with empty response.
+     */
     @GetMapping("/")
     @ResponseStatus(value = HttpStatus.NO_CONTENT)
     public void adminRoot(final HttpServletRequest request, final HttpServletResponse response) {

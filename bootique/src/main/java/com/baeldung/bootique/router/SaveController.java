@@ -12,6 +12,9 @@ public class SaveController {
     @Inject
     HelloService helloService;
 
+    /**
+     * Bootique controller endpoint. 
+     */
     @POST
     public String save() {
         return "Data Saved!";

@@ -31,6 +31,9 @@ public class PDF2HTMLExample {
 		}
 	}
 
+    /**
+     * Generate html from pdf.
+     */
 	private static void generateHTMLFromPDF(String filename) throws ParserConfigurationException, IOException {
 		PDDocument pdf = PDDocument.load(new File(filename));
 		PDFDomTree parser = new PDFDomTree();
@@ -42,6 +45,9 @@ public class PDF2HTMLExample {
 		}
 	}
 
+    /**
+     * Generate pdf from html
+     */
 	private static void generatePDFFromHTML(String filename) throws ParserConfigurationException, IOException, DocumentException {
 		Document document = new Document();
 		PdfWriter writer = PdfWriter.getInstance(document, new FileOutputStream("src/output/html.pdf"));

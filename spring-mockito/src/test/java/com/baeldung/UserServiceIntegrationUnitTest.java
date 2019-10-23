@@ -20,6 +20,9 @@ public class UserServiceIntegrationUnitTest {
     @Autowired
     private NameService nameService;
 
+    /**
+     * Testing service with mockito
+     */
     @Test
     public void whenUserIdIsProvided_thenRetrievedNameIsCorrect() {
         Mockito.when(nameService.getUserName("SomeId")).thenReturn("Mock user name");

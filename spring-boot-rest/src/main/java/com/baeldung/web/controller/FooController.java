@@ -112,6 +112,9 @@ public class FooController {
 
     // write
 
+    /**
+     * Spring rest handler for post or create requests.
+     */
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     public Foo create(@RequestBody final Foo resource, final HttpServletResponse response) {
@@ -124,6 +127,9 @@ public class FooController {
         return foo;
     }
 
+    /**
+     * Spring rest handler for put or update requests.
+     */
     @PutMapping(value = "/{id}")
     @ResponseStatus(HttpStatus.OK)
     public void update(@PathVariable("id") final Long id, @RequestBody final Foo resource) {
@@ -132,6 +138,9 @@ public class FooController {
         service.update(resource);
     }
 
+    /**
+     * Spring rest handler for delete requests.
+     */
     @DeleteMapping(value = "/{id}")
     @ResponseStatus(HttpStatus.OK)
     public void delete(@PathVariable("id") final Long id) {

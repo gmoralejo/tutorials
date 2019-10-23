@@ -20,12 +20,18 @@ public class SpringConfig {
         return new CustomRestTemplateCustomizer();
     }
 
+    /**
+     * Rest template builder.
+     */
     @Bean
     @DependsOn(value = {"customRestTemplateCustomizer"})
     public RestTemplateBuilder restTemplateBuilder() {
         return new RestTemplateBuilder(customRestTemplateCustomizer());
     }
 
+    /**
+     * Rest template bean
+     */
     @Bean
     public RestTemplate restTemplate() {
         return new RestTemplate();

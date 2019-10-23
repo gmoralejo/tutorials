@@ -8,6 +8,9 @@ import io.grpc.stub.StreamObserver;
 
 public class HelloServiceImpl extends HelloServiceImplBase {
 
+    /**
+     * grpc service method implementation.
+     */
     @Override
     public void hello(
       HelloRequest request, StreamObserver<HelloResponse> responseObserver) {

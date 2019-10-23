@@ -7,6 +7,9 @@ public class Log4j2Example {
 
     private static final Logger logger = LogManager.getLogger(Log4j2Example.class);
 
+    /**
+     * log4j2 example project.
+     */
     public static void main(String[] args) {
         logger.debug("Debug log message");
         logger.info("Info log message");
